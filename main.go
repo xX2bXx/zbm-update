@@ -10,7 +10,6 @@ import (
 	"time"
 )
 
-
 func main() {
 	if os.Geteuid() != 0 {
 		log.Fatalf("You must run it as root.\n")
@@ -26,7 +25,7 @@ func main() {
 	
 	targetIndex := getIndexOfTarget()
 	if targetIndex == 0 {
-    		log.Fatal("ERROR: --target argument not found")
+		log.Fatalf("ERROR: --target argument not found\n")
 	}
 
 	targetPath := os.Args[targetIndex]
@@ -63,7 +62,7 @@ func createBackup(targetPath, backupPath string) error {
 
 func installNewBootloader(url, targetPath string) error {
 	client := &http.Client{
-    	Timeout: 30 * time.Second,
+		Timeout: 30 * time.Second,
 	}
 	resp, err := client.Get(url)
 	if err != nil {
