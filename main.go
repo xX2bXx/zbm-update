@@ -23,12 +23,13 @@ func main() {
 		fmt.Printf("usage: \"zbm-update --target /path/to/ZBM.EFI [--backup /path/to/BACKUP.EFI (if you have one)] [--fallback true|false]\"\n")
 		return
 	}
-	
+
+	targetPath := os.Args[getIndexOf("--target")]
 	if getIndexOf("--target") == 0 {
 		log.Fatalf("ERROR: --target argument not found\n")
 	}
 
-	if !filepath.IsAbs(os.Args[getIndexOf("--target")]) {
+	if !filepath.IsAbs(targetPath) {
 		log.Fatal("ERROR: Target path must be absolute\n")
 	}
 
