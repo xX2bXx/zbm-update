@@ -46,7 +46,7 @@ func main() {
 	if err := installNewBootloader(targetPath); err != nil {
 		log.Fatalf("ERROR: %v\n", err)
 	}
-	log.Printf("Success!\nNo errors reported! Enjoy your new version of kernel & bootloader :)")
+	log.Printf("Success!\nNo errors reported! Enjoy your updated ZFSBootMenu :)")
 }
 
 func createBackup(targetPath, backupPath string) error {
