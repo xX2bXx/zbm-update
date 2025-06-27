@@ -84,11 +84,6 @@ func installNewBootloader(url, targetPath string) error {
 		return err
 	}
 
-	if err := os.Chmod(tmpFile, 0644); err != nil {
-		os.Remove(tmpFile)
-		return err
-	}
-
 	if err := os.Rename(tmpFile, targetPath); err != nil {
 		os.Remove(tmpFile)
 		return err
