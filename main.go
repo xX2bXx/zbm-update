@@ -19,8 +19,8 @@ func main() {
 	hasBackup := true
 	if len(os.Args) == 3 || (getIndexOf("--backup") == 0 && len(os.Args) == 5) {
 		hasBackup = false
-	} else if len(os.Args) != 7 {
-		fmt.Printf("usage: \"zbm-update --target /path/to/ZBM.EFI [--backup /path/to/BACKUP.EFI (if you have one)] [--fallback true|false]\"\n")
+	} else if len(os.Args) != 3 && len(os.Args) != 5 && len(os.Args) != 7 {
+		fmt.Printf("usage: \"zbm-update --target /path/to/ZBM.EFI [--backup /path/to/BACKUP.EFI (if you have one)] --fallback true|false\"\n")
 		return
 	}
 
