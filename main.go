@@ -75,14 +75,12 @@ func installNewBootloader(url, targetPath string) error {
 	}
 
 	tmpFile := targetPath + ".tmp"
-	out, err := os.Create(tmpFile)
+	data, err := io.ReadAll(resp.Body)
 	if err != nil {
 		return err
 	}
-	defer out.Close()
-	
-	if _, err := io.Copy(out, resp.Body); err != nil {
-		os.Remove(tmpFile)
+
+	if err := os.WriteFile(tmpFile, data, 0644); err != nil {
 		return err
 	}
 
