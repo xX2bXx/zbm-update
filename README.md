@@ -7,7 +7,7 @@ A simple yet reliable ZFSBootMenu updater
 ## Installation
 I personally recommend to build the binary manually
 ### Build Dependencies
-- **Go** 1.16+
+- **Go** 1.20+
 - **Git**
 ```sh
 git clone https://github.com/xX2bXx/zbm-update
