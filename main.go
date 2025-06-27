@@ -43,7 +43,7 @@ func main() {
 	}
 
 	log.Printf("Installing new ZFSBootMenu...")
-	if err := installNewBootloader("https://get.zfsbootmenu.org/efi", targetPath); err != nil {
+	if err := installNewBootloader(targetPath); err != nil {
 		log.Fatalf("ERROR: %v\n", err)
 	}
 	log.Printf("Success!\nNo errors reported! Enjoy your new version of kernel & bootloader :)")
@@ -60,11 +60,11 @@ func createBackup(targetPath, backupPath string) error {
 	return nil
 }
 
-func installNewBootloader(url, targetPath string) error {
+func installNewBootloader(targetPath string) error {
 	client := &http.Client{
 		Timeout: 30 * time.Second,
 	}
-	resp, err := client.Get(url)
+	resp, err := client.Get("https://get.zfsbootmenu.org/efi")
 	if err != nil {
 		return err
 	}
