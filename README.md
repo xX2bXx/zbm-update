@@ -25,9 +25,9 @@ chmod +x zbm-update
 (just an example)
 ```sh
 sudo zbm-update \
-  --target /boot/efi/EFI/ZBM/VMLINUZ.EFI \   # Path to the new ZFSBootMenu .EFI (necessary)
-  --backup /boot/efi/EFI/ZBM/VMLINUZ-BACKUP.EFI \ # Path to save the current one (unnecessary)
-  --fallback true # Create the ZBM copy in the default EFI path /boot/efi/EFI/BOOT/BOOTX64.EFI (necessary)
+        --target /boot/efi/EFI/ZBM/VMLINUZ.EFI \ # Path to the new ZFSBootMenu .EFI (necessary)
+        --backup /boot/efi/EFI/ZBM/VMLINUZ-BACKUP.EFI \ # Path to save the current one (unnecessary)
+        --fallback true # Create the ZBM copy in the default EFI path /boot/efi/EFI/BOOT/BOOTX64.EFI (necessary)
 ```
 
 ## Philosophy
